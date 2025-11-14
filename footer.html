@@ -1,0 +1,99 @@
+<!-- footer.html -->
+<footer style="background: white; color: white; text-align: center; padding: 0; margin: 0;">
+
+  <!-- Social Share Section -->
+  <div style="text-align: left; padding: 20px;">
+    <ul class="imi-social-icons imi-social-icons-round imi-social-icons-medium imi-social-icons-bc imi-social-icons-hover-sc"
+        style="list-style: none; display: flex; align-items: center; gap: 10px; padding-left: 20px; margin: 0;">
+      <li class="share-title" style="color: grey; font-weight: bold; margin-right: 10px;">SHARE IT</li>
+
+      <!-- Facebook -->
+      <li class="facebook">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.w3schools.com" target="_blank" title="Share on Facebook">
+          <img src="images/Social_Media_logo/facebook.png" alt="Facebook" style="height: 30px; width: 30px;" />
+        </a>
+      </li>
+
+      <!-- WhatsApp -->
+      <li class="whatsapp">
+        <a href="https://wa.me/?text=https://yourwebsite.com" target="_blank" title="Share on WhatsApp">
+          <img src="images/Social_Media_logo/whatsapp.jpeg" alt="WhatsApp" style="height: 30px; width: 30px;" />
+        </a>
+      </li>
+
+      <!-- LinkedIn -->
+      <li class="linkedin">
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://yourwebsite.com" target="_blank" title="Share on LinkedIn">
+          <img src="Images/Social_Media_logo/linkedin.png" alt="LinkedIn" style="height: 30px; width: 30px;" />
+        </a>
+      </li>
+
+      <!-- Twitter -->
+      <li class="twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com&text=Check%20this%20out!" target="_blank" title="Share on Twitter">
+          <img src="Images/Social_Media_logo/twitter.png" alt="Twitter" style="height: 30px; width: 30px;" />
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- WhatsApp Footer Strip -->
+  <div class="footer-strip">
+    <a href="https://wa.me/919999567382" target="_blank" style="text-decoration: none;">
+      <img src="images/Whatsapp_logo.svg" alt="WhatsApp Chat">
+    </a>
+    <p style="margin: 0; text-align: center; flex: 1;">
+   Copyright © 2022<span id="2022"></span> AGA Lumen. All rights reserved.
+  </p>
+  </div>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .footer-strip {
+      width: 100%;
+      height: 125px;
+      background: #006666;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-left: 20px;
+      box-sizing: border-box;
+      position: relative; /* ensures it's movable and scrolls naturally */
+    }
+
+    .footer-strip img {
+      height: 30px;
+      width: auto;
+      display: block;
+    }
+  </style>
+
+</footer>
+
+
+<!-- Floating WhatsApp Chat Button -->
+<script>
+  window.onload = function () {
+    var chatButton = document.createElement("a");
+    chatButton.href = "https://wa.me/919999567382";
+    chatButton.target = "_blank";
+    chatButton.style.position = "fixed";
+    chatButton.style.bottom = "20px";
+    chatButton.style.right = "20px";
+    chatButton.style.background = "#25D366";
+    chatButton.style.color = "white";
+    chatButton.style.padding = "12px 18px";
+    chatButton.style.borderRadius = "50px";
+    chatButton.style.boxShadow = "0 2px 6px rgba(0,0,0,0.3)";
+    chatButton.style.fontWeight = "bold";
+    chatButton.style.fontFamily = "Arial, sans-serif";
+    chatButton.style.zIndex = "9999";
+    chatButton.innerText = "💬 Customer Support";
+    document.body.appendChild(chatButton);
+  };
+</script>

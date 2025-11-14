@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us - AGA Lumen & PowerGrid Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <!-- Company Overview Section -->
+  <section style="max-width: 1000px; margin: auto; padding: 40px 20px; font-family: sans-serif; line-height: 1.6;">
+    <h1 style="text-align: center; color: #003366;">AGA Lumen & PowerGrid Solutions</h1>
+    <p style="text-align: center; font-style: italic; color: #666;">Brightening spaces. Powering grids. Enabling the future.</p>
+
+    <h2>Company Snapshot</h2>
+    <ul>
+      <li><strong>Name:</strong> AGA Lumen & PowerGrid Solutions</li>
+      <li><strong>Founded:</strong> [Year]</li>
+      <li><strong>Headquarters:</strong> [City, State, India]</li>
+      <li><strong>Legal Form:</strong> Private Limited / LLP / Proprietorship</li>
+      <li><strong>Website:</strong> <a href="#">www.agalumen.com</a></li>
+      <li><strong>Contact:</strong> sales@agalumen.com | +91-XXXXXXXXXX</li>
+    </ul>
+
+    <h2>Executive Summary</h2>
+    <p>
+      AGA Lumen & PowerGrid Solutions is a vertically integrated engineering company delivering sustainable lighting systems and power‑grid solutions across industrial, commercial, municipal and utility sectors. We combine energy‑efficient LED luminaires, smart lighting controls and end‑to‑end grid services (design, automation, integration, and O&M) to reduce operating costs, improve reliability and accelerate decarbonization.
+    </p>
+
+    <h2>Vision & Mission</h2>
+    <p><strong>Vision:</strong> To be India’s most trusted partner for intelligent lighting and resilient power‑grid solutions — creating safer, greener and smarter communities.</p>
+    <p><strong>Mission:</strong> Deliver cost‑effective, reliable engineering solutions that lower carbon footprint, increase uptime and provide measurable returns on energy and infrastructure investments.</p>
+
+    <h2>Core Values</h2>
+    <ul>
+      <li><strong>Customer First</strong> – Practical solutions that meet client KPIs.</li>
+      <li><strong>Quality & Safety</strong> – Robust testing and strict safety practices.</li>
+      <li><strong>Innovation</strong> – Smart systems and continuous product improvement.</li>
+      <li><strong>Sustainability</strong> – Energy efficiency & lifecycle thinking.</li>
+      <li><strong>Integrity</strong> – Transparent pricing and delivery.</li>
+    </ul>
+  </section>
+
+  <div id="footer"></div>
+
+  <script>
+  // Load header
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+
+      // Highlight active link after header is loaded
+      const currentPage = window.location.pathname.split('/').pop();
+      const links = document.querySelectorAll('#main-nav a');
+      links.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+  // Load footer
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => document.getElementById('footer').innerHTML = data);
+</script>
+
+
+</body>
+</html>

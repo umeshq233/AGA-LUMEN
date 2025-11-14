@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <section id="services" class="services-support">
+  <h2>Service &amp; Support</h2>
+
+  <!-- Calibration & Repair -->
+  <div class="service-block">
+    <h3>Calibration &amp; Repair</h3>
+    <p>We provide <strong>accredited laboratory and field calibration services</strong> to ensure your testing equipment delivers precise and reliable results.</p>
+    <ul>
+      <li>Accredited standards compliance with IS/IEC norms</li>
+      <li>On-site and laboratory calibration options</li>
+      <li>Repair solutions to restore faulty instruments</li>
+      <li>Calibration certificates and detailed reports for audits</li>
+    </ul>
+  </div>
+
+  <!-- Training & Workshops -->
+  <div class="service-block">
+    <h3>Training &amp; Workshops</h3>
+    <p>Our <strong>technical training programs</strong> empower your in-house teams to operate equipment confidently and safely.</p>
+    <ul>
+      <li>Hands-on courses for new equipment operation</li>
+      <li>Best practices in power testing and safety protocols</li>
+      <li>Customized modules tailored to your team’s needs</li>
+      <li>Knowledge transfer for independent project execution</li>
+    </ul>
+  </div>
+
+  <!-- Consulting & Diagnostics -->
+  <div class="service-block">
+    <h3>Consulting &amp; Diagnostics</h3>
+    <p>We offer <strong>expert consulting and diagnostic services</strong> to help you maintain asset health and prevent failures.</p>
+    <ul>
+      <li>Root-cause analysis of equipment malfunctions</li>
+      <li>Condition monitoring strategies for early detection</li>
+      <li>Comprehensive asset health assessments</li>
+      <li>Strategic guidance for upgrades and preventive maintenance</li>
+    </ul>
+  </div>
+
+  <!-- Rental & Short-Term Hire -->
+  <div class="service-block">
+    <h3>Rental &amp; Short-Term Hire</h3>
+    <p>Flexible <strong>equipment rental services</strong> designed for short-term projects and commissioning works.</p>
+    <ul>
+      <li>Wide range of calibrated, ready-to-use instruments</li>
+      <li>Cost-effective solutions for one-off projects</li>
+      <li>Quick availability to meet urgent schedules</li>
+      <li>Support included for setup and operation</li>
+    </ul>
+  </div>
+</section>
+
+  
+  <div id="footer"></div>
+
+  <script>
+  // Load header
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+
+      // Highlight active link after header is loaded
+      const currentPage = window.location.pathname.split('/').pop();
+      const links = document.querySelectorAll('#main-nav a');
+      links.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+  // Load footer
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => document.getElementById('footer').innerHTML = data);
+</script>
+
+
+</body>
+</html>

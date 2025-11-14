@@ -1,0 +1,89 @@
+<!-- header.html -->
+ <link rel="stylesheet" href="style.css">
+<header style="display: flex; justify-content: space-between; align-items: center; background: white; color: white; padding: 20px;">
+  <!-- Left: Logo -->
+  <div style="flex: 1;">
+    <img src="images/logo.png" alt="AGA Lumen & PowerGrid Solutions Logo" style="
+  height: 100px;
+  width: 200px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+">
+  </div>
+
+  <!-- Center: Tagline -->
+  <div style="flex: 2; text-align: center; overflow: hidden; position: relative;">
+  <div style="white-space: nowrap; display: inline-block; animation: moveRight 10s linear infinite;">
+    <p style="margin: 0; font-size: 18px; color: #006666; font-style: italic;">
+      Brightening spaces, Powering grids, Enabling the future.
+    </p>
+  </div>
+</div>
+
+  <!-- Right: Contact Info -->
+  <div style="flex: 1; ">
+  
+    <p style="margin: 0; color: #FF6600; font-weight: bold;">Call Us: +91-9999567382</p>
+    <p style="margin: 5px 0; color: black;">sales.aga@zohomail.in</p>
+  </div>
+ <div class="header-social" style="display: flex; align-items: center; gap: 10px;">
+  <!-- Facebook -->
+  <a href="https://www.facebook.com/YourPage" target="_blank">
+    <img src="images/Social_Media_logo/facebook_logo_black.svg" alt="Facebook" style="height: 40px; width: 40px;" />
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/in/aga-lumen-and-powergrid-solutions-111718391/" target="_blank">
+    <img src="images/Social_Media_logo/linkedin_logo_black.webp" alt="LinkedIn" style="height: 40px; width: 40px;" />
+  </a>
+</div>
+
+  <div>
+
+  </div>
+</header>
+
+<nav id="main-nav">
+  <a href="index.html">Home</a>
+ 
+  <a href="services.html">Services</a>
+  <div class="dropdown">
+    <button class="dropbtn">Products▸</button>
+    <div class="dropdown-content">
+      <div class="sub-dropdown">
+        <a href="#">Lighting Solutions▸</a>
+        <div class="sub-dropdown-content">
+          <a href="architectural_lighting.html">Architecural Lighting</a>
+          <a href="landscape_lighting.html">Landscape Lighting</a>
+           <a href="decorative_lighting.html">Decorative Lighting</a>
+          <a href="driver.html">Drivers</a>
+        </div>
+      </div>
+      <a href="transmission.html">Transmission Testing Equipment</a>
+      <a href="distribution.html">Distribution Testing Equipment</a>
+      <div class="sub-dropdown">
+        <a href="#">Substation Testing Equipment ▸</a>
+        <div class="sub-dropdown-content">
+          <a href="ais.html">Air Insulated Substation</a>
+          <a href="gis.html">Gas Insulated Substation</a>
+        </div>
+    </div>
+  </div>
+  <a href="contact.html">Contact Us</a>
+</nav>
+
+<script>
+  const links = document.querySelectorAll('#main-nav a');
+  const currentPage = window.location.pathname.split('/').pop();
+
+  links.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  });
+</script>
+
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Architecural Lighting - AGA Lumen & PowerGrid Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <div class="container" style="display: flex; gap: 30px;">
+  <!-- Left: Main Content -->
+  <div class="main-content" style="flex: 3;">
+    <h2>Architectural Lighting</h2>
+    <p>Architectural Lighting refers to the art and science of designing lighting systems that enhance the appearance, function, and atmosphere of a building or space. </p>
+
+    <!-- ✅ Your tool-row block goes here -->
+    <div class="tool-row">
+     <div class="tools">
+       
+
+        <p><strong>Neko Lighting:</strong> specializes in modern indoor architectural lighting that blends elegant European design with energy-efficient technology...</p>
+      </div>
+<div class="tools">
+        
+        <p><strong>UniLamp Lighting:</strong> focuses on durable outdoor and landscape lighting, built to perform in all weather conditions....</p>    </div>
+
+      
+
+    </div>
+ 
+  </div>
+
+  <!-- Right: Products Sidebar -->
+     <div id="product"></div>
+</div>
+
+  </div>
+
+  <div id="footer"></div>
+
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('header').innerHTML = data);
+
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('footer').innerHTML = data);
+fetch('products.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('product').innerHTML = data);
+  </script>
+  <script>
+  // Highlight active link based on current page
+  document.addEventListener("DOMContentLoaded", function () {
+    const currentPage = window.location.pathname.split("/").pop(); // e.g. ais.html
+
+    // Wait until header is loaded
+    setTimeout(() => {
+      const navLinks = document.querySelectorAll("#header a, #header .dropbtn");
+
+      navLinks.forEach(link => {
+        const href = link.getAttribute("href");
+
+        // Case 1: Home page
+        if (currentPage === "index.html" && href === "index.html") {
+          link.classList.add("active");
+        }
+
+        // Case 2: Contact page
+        if (currentPage === "contact.html" && href === "contact.html") {
+          link.classList.add("active");
+        }
+
+        // Case 3: Product pages (AIS, GIS, Transmission, Distribution)
+        if (
+          ["ais.html", "gis.html", "transmission.html", "distribution.html","architectural_lighting.html","decorative_lighting.html","driver.html","landscape_lighting.html"].includes(currentPage)
+        ) {
+          // Highlight the Products dropdown button
+          const productsBtn = document.querySelector("#header .dropbtn");
+          if (productsBtn) productsBtn.classList.add("active");
+        }
+      });
+    }, 200); // small delay to ensure header is loaded
+  });
+</script>
+
+
+</body>
+</html>

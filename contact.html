@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us - AGA Lumen & PowerGrid Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="header"></div>
+  
+
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; background: #f9f9f9;">
+
+  <!-- Contact Form Section -->
+ <div class="container" style="max-width: 900px; margin: auto; padding: 20px;">
+  <h2 style="text-align: center;">GET IN-TOUCH WITH US</h2>
+  <form action="https://formsubmit.co/sales.aga@zohomail.in" method="POST" enctype="text/plain" onsubmit="return validateForm();">
+
+    <div class="row" style="display: flex; flex-wrap: wrap; gap: 20px;">
+      <!-- Left Column -->
+      <div class="col-md-6 col-sm-6" style="flex: 1; min-width: 300px;">
+        <label><b>Your Name<span style="color: red;">*</span></b></label><br>
+        <input type="text" name="name" class="form-input" required><br><br>
+
+        <label><b>Company</b></label><br>
+        <input type="text" name="company" class="form-input" ><br><br>
+
+        <label><b>Designation</b></label><br>
+        <input type="text" name="designation" class="form-input" ><br><br>
+      </div>
+
+      <!-- Right Column -->
+      <div class="col-md-6 col-sm-6" style="flex: 1; min-width: 300px;">
+        <label><b>Phone<span style="color: red;">*</span></b></label><br>
+      <input type="tel" name="phone" class="form-input"
+       inputmode="numeric" pattern="[0-9]{10}" maxlength="10"
+       required title="Please enter a 10-digit numeric phone number"><br><br>
+
+        <label><b>Team to contact</span></b></label><br>
+        <input type="radio" name="team" value="Sales" > Sales<br>
+        <input type="radio" name="team" value="Application Support"> Application Support<br><br>
+
+        <label><b>Your Email<span style="color: red;">*</span></b></label><br>
+        <input type="email" name="email" class="form-input" required><br><br>
+      </div>
+    </div>
+
+    <!-- Message Textarea Full Width -->
+    <div style="width: 100%;">
+      <label><b>Your Message</b></label><br>
+      <textarea name="message" rows="6" class="form-input" style="width: 100%; max-width: 600px;"></textarea>
+    </div>
+
+    <!-- Centered Button -->
+    <div style="text-align: center; margin: 20px 0;">
+      <button type="submit" style="background: green; color: white; padding: 10px 20px; border: none; border-radius: 4px; width: 300px; height: 75px;">Send Message</button>
+    </div>
+
+  </form>
+  <div id="confirmation" style="text-align: center; color: green; font-weight: bold; display: none;">
+  ✅ Your message has been prepared for sending!
+</div>
+</div>
+
+<script>
+function validateForm() {
+  const requiredFields = document.querySelectorAll('[required]');
+  for (let field of requiredFields) {
+    if (!field.value.trim()) {
+      alert("Please fill out all required fields.");
+      field.focus();
+      return false;
+    }
+  }
+
+
+}
+</script>
+<style>
+.form-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+.form-input:focus {
+  border-color: #006666;
+  outline: none;
+}
+</style>
+
+
+
+  <!-- Contact Info Section -->
+  <div style="flex: 1; min-width: 300px; background: white; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    <h2>Contact Us</h2>
+    <p><strong>Address:</strong> Pratap Vihar, Ghaziabad</p>
+    <p><strong>Phone:</strong> +91 9999567382</p>
+    <p><strong>Email:</strong> sales.aga@zohomail.in</p>
+  </div>
+
+</div>
+
+
+  <div id="footer"></div>
+
+ <script>
+  // Run after header is loaded
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+
+      // Now highlight the active link
+      const currentPage = window.location.pathname.split('/').pop();
+      const links = document.querySelectorAll('#main-nav a');
+      links.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => document.getElementById('footer').innerHTML = data);
+</script>
+
+  
+
+
+</body>
+</html>
